@@ -1,0 +1,75 @@
+#{extends 'main.html' /}
+#{set title:'Edit Details' /}
+
+#{include "components/navigation.html" /}
+<h1 class="ui inverted block header">Account Settings</h1>
+<section class="ui three column middle aligned grid raised form segment">
+  <div class="ui six wide column">
+    <img src="/public/images/simpsons3.gif" class="ui large image">
+  </div>
+  <div class="four wide column">
+  	<table class="ui table segment">
+    <thead>
+      <tr>
+        <th>Current Settings</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>First Name</td>
+        <td>${user.firstName}</td>
+      </tr>
+      <tr>
+      	<td>Last Name</td>
+      	<td>${user.lastName}</td>
+      </tr>
+	  <tr>
+	  	<td>Nationality</td>
+	  	<td>${user.nationality}</td>
+	  </tr>
+      <tr>
+      	<td>Age</td>
+      	<td>${user.age}</td>
+      </tr>
+      <tr>
+      	<td>Email</td>
+      	<td>${user.email}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="ui six wide column">
+	  <form action="/editprofile/change" method="POST">
+	    <div class="two fields">
+	      <div class="field">
+	        <label>First Name</label>
+	        <input placeholder="First Name" type="text" name="firstName" value="${user.firstName}">
+	      </div>
+	      <div class="field">
+	        <label>Last Name</label>
+	        <input placeholder="Last Name" type="text" name="lastName" value="${user.lastName}">
+	      </div>
+	    </div>
+	    <div class="two fields">
+	      <div class="field">
+	        <label>Nationality</label>
+	        <input placeholder="Nationality" type="text" name="nationality" value="${user.nationality}">
+	      </div>
+	      <div class="field">
+	        <label>Age</label>
+	        <input placeholder="Age" type="text" name="age"value="${user.age}">
+	      </div>
+	    </div>    <div class="field">
+	      <label>Email</label>
+	      <input placeholder="Email" type="text" name="email" value="${user.email}">
+	    </div>
+	    <div class="field">
+	      <label>Password</label>
+	      <input type="password" name="password">
+	    </div>
+	    <button class="ui blue submit button">Submit</button>
+	  </form>
+  </div>	  
+
+</section>

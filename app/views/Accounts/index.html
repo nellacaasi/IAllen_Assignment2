@@ -1,0 +1,64 @@
+#{extends 'main.html' /}
+#{set title:'Welcome to Spacebook' /}
+
+<nav class="ui inverted menu">
+  <img class="ui medium middle aligned image item" src="/public/images/sb_logo_full_inverted.png" alt="Spacebook">
+  <div class="right menu">
+  	<h3 class="ui header item">Login to Spacebook:</h3>
+    <form action="/authenticate" method="POST">
+	    <div class="field item">
+	      <label> Username: </label>
+	      <input class="ui  item" style="border:none" type="text" name="email">
+	    </div>  
+	    <div class="field item">
+	      <label>  Password: </label>
+	      <input class="ui black item" style="border:none" type="password" name="password">
+	    </div>
+	    <button class="ui blue submit button">Login</button>
+	  </form>
+  </div>
+</nav> 
+
+<section class="ui raised segment">
+  <p> Signup or Log in to the Spacebook Service </p>
+</section>
+
+<section class="ui two column middle aligned stackable grid raised form segment">
+	<div class="column">
+    <img src="/public/images/simpsons2.gif" class="ui large image">
+  </div>
+  <div class="column">
+  
+      <h2 class="ui header">Signup to Spacebook</h2>
+	  <form action="/register" method="POST">
+	    <div class="two fields">
+	      <div class="field">
+	        <label>First Name</label>
+	        <input placeholder="First Name" type="text" name="firstName">
+	      </div>
+	      <div class="field">
+	        <label>Last Name</label>
+	        <input placeholder="Last Name" type="text" name="lastName">
+	      </div>
+	    </div>
+	    <div class="two fields">
+	      <div class="field">
+	        <label>Nationality</label>
+	        <input placeholder="Nationality" type="text" name="nationality">
+	      </div>
+	      <div class="field">
+	        <label>Age</label>
+	        <input placeholder="Age" type="text" name="age">
+	      </div>
+	    </div>    <div class="field">
+	      <label>Email</label>
+	      <input placeholder="Email" type="text" name="email">
+	    </div>
+	    <div class="field">
+	      <label>Password</label>
+	      <input type="password" name="password">
+	    </div>
+	    <button class="ui blue submit button">Submit</button>
+	  </form>
+	</div>
+</section>

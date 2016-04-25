@@ -1,0 +1,16 @@
+#{extends 'main.html' /}
+#{set title:'Blog' /}
+
+#{include "components/navigation.html" /}
+
+<h1 class="ui inverted block header" >Blog  </h1>
+<section class="ui two column grid segment">
+  <div class="row">
+    <div class="ui column">
+      #{include "components/createpost.html" /} 
+    </div>
+    <div class="column">
+      #{include "components/displayposts.html" /} 
+    </div>
+  </div>
+</section>
