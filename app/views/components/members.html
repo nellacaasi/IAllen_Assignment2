@@ -1,12 +1,38 @@
-<section class="ui raised segment">
-  <div class="ui list"> 
-    #{list items:users, as:'user'}
-      <div class="ui item"> 
-        <img class="ui avatar image" src="/profile/getpicture/${user.id}">
-        <div class="content">
-          ${user.firstName} ${user.lastName}: : ${user.statusText}  <a href="members/follow/${user.id}"> (follow) </a> 
-        </div>
-      </div>
-    #{/list}
-  </div>
+<table class="ui table segment">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Status</th>
+          <th>Blog</th>
+          <th>Follow</th>
+        </tr>
+      </thead>
+      <tbody>
+        #{list items:users, as:'user'}
+          <tr>
+            <td>
+            	#{if user.userOnline == true}
+              		<i class="green circle icon"></i>
+              	#{/if}
+              	#{else}
+              	<i class="red circle icon"></i>
+			  	#{/else}
+              <div class="ui avatar image">
+                <img src="/profile/getpicture/${user.id}">
+              </div>
+               <a href="/publicprofile/${user.id}"> ${user.firstName} ${user.lastName}</a>
+             </td>
+             <td>
+             	${user.statusText}
+             </td>
+             <td>
+             	<a href="">(blog)</a>
+             </td>
+             <td>
+             	<a href="members/follow/${user.id}"> (follow) </a>
+             </td>
+          </tr>
+        #{/list}
+      </tbody>
+    </table>  
 </section>
