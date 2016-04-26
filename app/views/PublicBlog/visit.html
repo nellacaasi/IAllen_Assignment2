@@ -1,0 +1,8 @@
+#{extends 'main.html' /}
+#{set title:'Blog' /}
+
+#{include "components/navigation.html" /}
+
+<h1 class="ui inverted block header" >${user.firstName} ${user.lastName}'s Blog  </h1>
+
+#{include "components/displayposts.html" /}

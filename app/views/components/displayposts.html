@@ -13,7 +13,7 @@
 		    <div class="ten wide column">
 		      <div class="ui small header">Comments</div>
 		      <div class="ui center aligned middle aligned padded grid">
-	           #{list items:post.comments, as:'comment'}
+	           #{list items:post.comments.reverse(), as:'comment'}
 	              <div class="row">
 	              <div class="three wide column">
 	                ${comment.from.firstName}
