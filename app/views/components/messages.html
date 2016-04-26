@@ -12,6 +12,12 @@
         #{list items:user.inbox, as:'message'}
           <tr>
             <td>
+            	#{if message.from.userOnline == true}
+              		<i class="green circle icon"></i>
+              	#{/if}
+              	#{else}
+              	<i class="red circle icon"></i>
+			  	#{/else}
               <div class="ui avatar image">
                 <img src="/profile/getpicture/${message.from.id}">
               </div>

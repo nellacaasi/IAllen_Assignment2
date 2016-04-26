@@ -12,6 +12,8 @@ public class Home extends Controller
   public static void index()
   {
     User user = Accounts.getLoggedInUser();
+	user.userOnline = true;
+	user.save();
     render(user);
   }
 
