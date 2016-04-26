@@ -1,7 +1,11 @@
 package models;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import play.db.jpa.Model;
 
@@ -17,6 +21,9 @@ public class Post extends Model
     this.title = title;
     this.content = content;
   }
+  
+  @OneToMany(mappedBy = "postid")
+  public List<Comment> comments = new ArrayList<Comment>();
 
   public String toString()
   {

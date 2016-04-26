@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import play.db.jpa.Model;
+import play.Logger;
 import play.db.jpa.Blob;
 
 @Entity
@@ -81,12 +82,21 @@ public class User extends Model
     save();
   }  
   
-  public void sendMessage (User to, String messageText)
-  {
+  public void sendMessage (User to, String messageText){
     Message message = new Message (this, to, messageText);
     outbox.add(message);
     to.inbox.add(message);
     message.save();
   }  
   
+  public void sendComment (User to, String commentText, Long postid, String date)
+  {
+	User user = to;
+	Post post = Post.findById(postid);
+	
+    Comment comment = new Comment (this, commentText,postid, date);
+    post.comments.add(comment);
+    comment.save();
+    Logger.info("on post: "+postid+" to user: "+user);
+  }
 }
