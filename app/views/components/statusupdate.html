@@ -1,7 +1,12 @@
 <section class="ui stacked segment">
   <h4 class="ui inverted block header"> Status</h4>
   <div class="ui message">
-    <p> ${user.statusText} </p>
+  	#{if user.statusText != null}
+    	<i class="green announcement icon"></i> ${user.statusText}
+    #{/if}
+    #{else}
+    	<i class="red announcement icon"></i> Profile status not set
+    #{/else}
   </div>
    <section class="ui form segment">
     <form action="/profile/changestatus" method="POST">
