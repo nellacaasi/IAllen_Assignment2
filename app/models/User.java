@@ -3,6 +3,7 @@ package models;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,9 @@ import play.db.jpa.Model;
 import play.Logger;
 import play.db.jpa.Blob;
 
+
 @Entity
+@Table(name="`User`") //This is necessary because User is a reserved word in PostGreSQL
 public class User extends Model
 {
   public String firstName;
