@@ -6,6 +6,7 @@ import play.db.jpa.*;
 @Entity
 public class Comment extends Model
 {
+  @Lob
   public String commentText;
   public Long postid;
   public String date;
