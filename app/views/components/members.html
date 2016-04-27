@@ -23,13 +23,23 @@
                <a href="/publicprofile/${user.id}"> ${user.firstName} ${user.lastName}</a>
              </td>
              <td>
-             	${user.statusText}
+             	#{if user.statusText != null}
+             		${user.statusText}
+             	#{/if}
+             	#{else}
+             		<i class="red announcement icon"></i> This user has not added a status
+             	#{/else}
              </td>
              <td>
-             	<a href="">(blog)</a>
+             	#{if user.posts.size() > 0}
+             		<a href="/blog/${user.id}"><i class="green book icon"></i>(blog)</a>
+             	#{/if}
+             	#{else}
+             		<i class="red book icon"></i>No Blog for this user
+             	#{/else}
              </td>
              <td>
-             	<a href="members/follow/${user.id}"> (follow) </a>
+             	<a href="members/follow/${user.id}"><i class="add user icon"></i> Follow </a>
              </td>
           </tr>
         #{/list}

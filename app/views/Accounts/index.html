@@ -63,7 +63,7 @@
 	</div>
 </section>
 <section class="ui raised segment">
-	<h2>Blogs currently on our site</h2>
+	<h2 class="ui header">Blogs currently on our site:</h2>
 	    #{list items:users, as:'user'}
   		    #{if user.posts.size() > 0}
 		        <a href="/blog/${user.id}">${user.firstName} ${user.lastName}</a>
